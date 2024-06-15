@@ -1,28 +1,24 @@
 # Stage 1: Build the application
-FROM node:20 AS build-stage
-
+FROM node:lts AS development
+# Set working directory
 WORKDIR /app
-
-# Copy package.json and package-lock.json to install dependencies
-COPY package.json package-lock.json ./
-
-# Install dependencies using npm
-RUN npm install --force
-
-# Copy the entire source code into the container
-COPY . .
+COPY package.json /app/package.json
+COPY package-lock.json /app/package-lock.json
+# Same as npm install
+RUN npm i --force
+COPY . /app
 
 # Build the application
-RUN npm run build --force
+RUN npm run build
 
 # Stage 2: Serve the application with nginx
 FROM nginx:alpine
-
-# Copy build files from the build stage
-COPY --from=build-stage /app/build /usr/share/nginx/html
-
-# Expose port 80 for access
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Copy nginx configuration
+COPY --from=development /app/nginx.conf /etc/nginx/nginx.conf
+WORKDIR /usr/share/nginx/html
+# Remove default nginx static assets
+RUN rm -rf ./*
+# Copy static assets from builder stage
+COPY --from=development /app/build .
+# Containers run nginx with global directives and daemon off
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
