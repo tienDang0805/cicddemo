@@ -41,8 +41,8 @@ export default function DenseTable(props) {
     
     function Edit(data) {
         console.log('data',data)
-        React.refModalEditBillCustomer?.open();
-        React.refModalEditBillCustomer.Edit(data);
+        // React.refModalEditBillCustomer?.open();
+        // React.refModalEditBillCustomer?.Edit(data);
     }
 
     // function Delete(MAPD, listNVGH ,data) {
@@ -117,7 +117,7 @@ export default function DenseTable(props) {
                         ))}
                     </TableBody>
                 </Table>
-                <FormModalEditBillCustomer ref={(ref) => (React.refModalEditBillCustomer = ref)} />
+                {/* <FormModalEditBillCustomer ref={(ref) => (React.refModalEditBillCustomer = ref)} /> */}
                 {/* <FormModalDeleteBillCustomer ref={(ref) => (React.refModalDeleteBill = ref)} listNVGH={listNVGH} /> */}
             </TableContainer>
         </>

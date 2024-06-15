@@ -21,16 +21,16 @@ export default function DenseTable() {
   function Edit(data) {
     //console.log(MANCC)
     // console.log('d',data.EMAIL)
-    React.refModalEditDDH?.open();
-    React.refModalEditDDH.Edit(data);
+    // React.refModalEditDDH?.open();
+    // React.refModalEditDDH.Edit(data);
   }
 
   function Delete(MANCC) {
     //console.log(MANCC)
     // console.log('d',data.EMAIL)
-    React.refModalDeleteDDH?.open();
+    // React.refModalDeleteDDH?.open();
 
-    React.refModalDeleteDDH.Delete(MANCC);
+    // React.refModalDeleteDDH.Delete(MANCC);
     
   }
 
@@ -114,8 +114,8 @@ export default function DenseTable() {
             ))}
           </TableBody>
         </Table>
-        <FormModalEdit ref={(ref) => (React.refModalEditDDH = ref)} />
-        <FormModalDelete ref={(ref) => (React.refModalDeleteDDH = ref)} />
+        {/* <FormModalEdit ref={(ref) => (React.refModalEditDDH = ref)} />
+        <FormModalDelete ref={(ref) => (React.refModalDeleteDDH = ref)} /> */}
       </TableContainer>
     </>
   );

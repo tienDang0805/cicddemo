@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile
     container_name: be_banruou
     ports:
-      - "8080:8080"
+      - "8080:80"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db_banruou:3306/banruou?zeroDateTimeBehavior=convertToNull
       SPRING_DATASOURCE_USERNAME: root
@@ -37,7 +37,7 @@ services:
       dockerfile: Dockerfile
     container_name: fe_banruou
     ports:
-      - "4000:4000"
+      - "80:80"
     environment:
       - NODE_ENV=production
     depends_on:

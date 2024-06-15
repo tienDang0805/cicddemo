@@ -48,21 +48,21 @@ export default function DenseTable(props) {
     
     function Edit(data) {
         //console.log(data)
-        React.refModalEditBill?.open();
-        React.refModalEditBill.Edit(data);
+        // React.refModalEditBill?.open();
+        // React.refModalEditBill.Edit(data);
     }
 
     function Delete(MAPD, listNVGH ,data) {
-        React.refModalDeleteBill?.open();
-        React.refModalDeleteBill.Delete(MAPD,listNVGH, data);
+        // React.refModalDeleteBill?.open();
+        // React.refModalDeleteBill.Delete(MAPD,listNVGH, data);
 
     }
 
     function BillDetail(data) {
         
 
-        React.refModalBillDetail?.open();
-        React.refModalBillDetail.Detail(data);
+        // React.refModalBillDetail?.open();
+        // React.refModalBillDetail.Detail(data);
 
     }
     const totalCTPD = (list) => {
@@ -181,9 +181,9 @@ export default function DenseTable(props) {
                         ))}
                     </TableBody>
                 </Table>
-                <FormModalEditBill ref={(ref) => (React.refModalEditBill = ref)} />
-                <FormModalDeleteBill ref={(ref) => (React.refModalDeleteBill = ref)} listNVGH={listNVGH} />
-                <BillDetailDialog ref={(ref) => (React.refModalBillDetail = ref)}/>
+                {/* <FormModalEditBill ref={(ref) => (React.refModalEditBill = ref)} /> */}
+                {/* <FormModalDeleteBill ref={(ref) => (React.refModalDeleteBill = ref)} listNVGH={listNVGH} /> */}
+                {/* <BillDetailDialog ref={(ref) => (React.refModalBillDetail = ref)}/> */}
             </TableContainer>
         </>
     );

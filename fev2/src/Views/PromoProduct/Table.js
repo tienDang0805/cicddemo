@@ -59,16 +59,16 @@ export default function DenseTable() {
     function Edit(data){
     //console.log(MANCC)
     // console.log('d',data.EMAIL)
-    React.refModalEditPromoProduct?.open()
-    React.refModalEditPromoProduct.Edit( data)
+    // React.refModalEditPromoProduct?.open()
+    // React.refModalEditPromoProduct.Edit( data)
 
     
     }
 
     function Delete(MAKM, MADONG) {
-    React.refModalDeletePromoProduct?.open()
+    // React.refModalDeletePromoProduct?.open()
 
-    React.refModalDeletePromoProduct.Delete( MAKM, MADONG)
+    // React.refModalDeletePromoProduct.Delete( MAKM, MADONG)
     // const index = listProviders.findIndex(x => x.MANCC === MANCC)
     // console.log(index)
     // if(index >= 0) {
@@ -124,7 +124,7 @@ export default function DenseTable() {
         </TableBody>
       </Table>
       {/* <FormModalEdit ref={(ref) => (React.refModalEditProvider = ref)} /> */}
-      <FormModalDeletePromoProduct ref={(ref) => (React.refModalDeletePromoProduct = ref)} />
+      {/* <FormModalDeletePromoProduct ref={(ref) => (React.refModalDeletePromoProduct = ref)} /> */}
     </TableContainer>
   );
 }

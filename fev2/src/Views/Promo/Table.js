@@ -17,16 +17,16 @@ export default function DenseTable() {
         
         //console.log(data)
         
-        React.refModalEditPromo?.open()
-        React.refModalEditPromo.Edit( data)
+        // React.refModalEditPromo?.open()
+        // React.refModalEditPromo.Edit( data)
 
         
     }
 
     function Delete(MAKM) {
-        React.refModalDeletePromo?.open()
+        // React.refModalDeletePromo?.open()
 
-        React.refModalDeletePromo.Delete( MAKM)
+        // React.refModalDeletePromo.Delete( MAKM)
         const index = listPromos.findIndex(x => x.MAKM === MAKM)
         console.log(index)
         if(index >= 0) {
@@ -86,8 +86,8 @@ export default function DenseTable() {
 
                 </TableBody>
             </Table>
-            <FormModalEditPromo ref={ref => React.refModalEditPromo = ref} />
-            <FormModalDeletePromo ref={ref => React.refModalDeletePromo = ref} />
+            {/* <FormModalEditPromo ref={ref => React.refModalEditPromo = ref} />
+            <FormModalDeletePromo ref={ref => React.refModalDeletePromo = ref} /> */}
         </TableContainer>
     );
 }

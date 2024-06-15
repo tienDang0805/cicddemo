@@ -18,8 +18,8 @@ export default function DenseTable() {
     function Edit(data){
         //console.log(MANCC)
         // console.log('d',data.EMAIL)
-        React.refModalEditProductType?.open()
-        React.refModalEditProductType.Edit( data)
+        // React.refModalEditProductType?.open()
+        // React.refModalEditProductType.Edit( data)
 
         
     }
@@ -27,9 +27,9 @@ export default function DenseTable() {
     function Delete(MALOAI) {
         //console.log(MANCC)
         // console.log('d',data.EMAIL)
-        React.refModalDeleteProductType?.open()
+        // React.refModalDeleteProductType?.open()
 
-        React.refModalDeleteProductType.Delete( MALOAI)
+        // React.refModalDeleteProductType.Delete( MALOAI)
         const index = listWineTypes.findIndex(x => x.MALOAI === MALOAI)
         console.log(index)
         if(index >= 0) {
@@ -81,8 +81,8 @@ export default function DenseTable() {
                     
                 </TableBody>
             </Table>
-            <FormModalEdit ref={ref => React.refModalEditProductType = ref} />
-            <FormModalDelete ref={ref => React.refModalDeleteProductType = ref} />
+            {/* <FormModalEdit ref={ref => React.refModalEditProductType = ref} />
+            <FormModalDelete ref={ref => React.refModalDeleteProductType = ref} /> */}
         </TableContainer>
     );
 }

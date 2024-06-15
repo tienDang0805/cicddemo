@@ -20,14 +20,14 @@ import {checkKm, convertKm, convertPrice, fixedPrice, checkPrice} from "../../he
 
 export default function DenseTable() {
   function Edit(data) {
-    React.refModalEditProduct?.open();
-    React.refModalEditProduct.Edit(data);
+    // React.refModalEditProduct?.open();
+    // React.refModalEditProduct.Edit(data);
   }
 
   function Delete(MADONG) {
-    React.refModalDeleteProduct?.open();
+    // React.refModalDeleteProduct?.open();
 
-    React.refModalDeleteProduct.Delete(MADONG);
+    // React.refModalDeleteProduct.Delete(MADONG);
     const index = listProducts.findIndex((x) => x.MADONG === MADONG);
     console.log(index);
     if (index >= 0) {
@@ -133,10 +133,10 @@ export default function DenseTable() {
           ))}
         </TableBody>
       </Table>
-      <FormModalEditProduct ref={(ref) => (React.refModalEditProduct = ref)} />
+      {/* <FormModalEditProduct ref={(ref) => (React.refModalEditProduct = ref)} />
       <FormModalDeleteProduct
         ref={(ref) => (React.refModalDeleteProduct = ref)}
-      />
+      /> */}
     </TableContainer>
   );
 }

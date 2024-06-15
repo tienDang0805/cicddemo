@@ -6,7 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import { GetListBill, GetListPD } from "../../services/Bill";
 import { GetListCustomer } from "../../services/Customer";
 import { GetNVGH } from "../../services/Staff";
@@ -19,6 +19,7 @@ export default function DenseTable(props) {
     const listPds = props.list
     const [listCustomers, setListCustomers] = useState([]);
     const [listNVGH,setListNVGH] = useState([])
+    const refModalEditBill = useRef(null);
 
     
 
@@ -40,13 +41,13 @@ export default function DenseTable(props) {
     
     function Edit(data) {
         //console.log(data)
-        React.refModalEditBill?.open();
-        React.refModalEditBill.Edit(data);
+        // refModalEditBill.current?.open();
+        // refModalEditBill.current.Edit(data);
     }
 
     function Delete(MAPD, listNVGH ,data) {
-        React.refModalDeleteBill?.open();
-        React.refModalDeleteBill.Delete(MAPD,listNVGH, data);
+        // React.refModalDeleteBill?.open();
+        // React.refModalDeleteBill.Delete(MAPD,listNVGH, data);
 
     }
     const totalCTPD = (list) => {
@@ -116,8 +117,8 @@ export default function DenseTable(props) {
                         ))}
                     </TableBody>
                 </Table>
-                <FormModalEditBillShipper ref={(ref) => (React.refModalEditBill = ref)} />
-                <FormModalDeleteBillShipper ref={(ref) => (React.refModalDeleteBill = ref)} listNVGH={listNVGH} />
+                {/* <FormModalEditBillShipper ref={(ref) => (refModalEditBill.current = ref)} /> */}
+                {/* <FormModalDeleteBillShipper ref={(ref) => (React.refModalDeleteBill = ref)} listNVGH={listNVGH} /> */}
             </TableContainer>
         </>
     );

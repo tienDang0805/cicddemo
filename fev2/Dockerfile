@@ -1,22 +1,28 @@
-# Sử dụng image chính thức của Node.js làm base image
-FROM node:16-alpine
+# Stage 1: Build the application
+FROM node:20 AS build-stage
 
-# Thiết lập thư mục làm việc bên trong container
 WORKDIR /app
 
-# Copy file package.json và yarn.lock vào thư mục làm việc
-COPY package.json yarn.lock ./
+# Copy package.json and package-lock.json to install dependencies
+COPY package.json package-lock.json ./
 
-# Cài đặt các phụ thuộc của ứng dụng
-RUN yarn install
+# Install dependencies using npm
+RUN npm install --force
 
-# Copy toàn bộ mã nguồn vào thư mục làm việc
+# Copy the entire source code into the container
 COPY . .
 
-# Thực hiện build ứng dụng React
-# RUN yarn build
+# Build the application
+RUN npm run build --force
 
-# Mở cổng 4000 (nếu cần thiết)
-EXPOSE 4000
+# Stage 2: Serve the application with nginx
+FROM nginx:alpine
 
-CMD ["yarn", "start"]
+# Copy build files from the build stage
+COPY --from=build-stage /app/build /usr/share/nginx/html
+
+# Expose port 80 for access
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]

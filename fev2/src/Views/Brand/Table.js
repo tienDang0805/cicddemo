@@ -18,8 +18,8 @@ export default function DenseTable() {
     function Edit(data){
         //console.log(MANCC)
         // console.log('d',data.EMAIL)
-        React.refModalEditBrand?.open()
-        React.refModalEditBrand.Edit( data)
+        // React.refModalEditBrand?.open()
+        // React.refModalEditBrand.Edit( data)
 
         
     }
@@ -27,9 +27,9 @@ export default function DenseTable() {
     function Delete(MATH) {
         //console.log(MANCC)
         // console.log('d',data.EMAIL)
-        React.refModalDeleteBrand?.open()
+        // React.refModalDeleteBrand?.open()
 
-        React.refModalDeleteBrand.Delete( MATH)
+        // React.refModalDeleteBrand.Delete( MATH)
         const index = listBrands.findIndex(x => x.MATH === MATH)
         console.log(index)
         if(index >= 0) {
@@ -82,8 +82,8 @@ export default function DenseTable() {
                     
                 </TableBody>
             </Table>
-            <FormModalEdit ref={ref => React.refModalEditBrand = ref} />
-            <FormModalDelete ref={ref => React.refModalDeleteBrand = ref} />
+            {/* <FormModalEdit ref={ref => React.refModalEditBrand = ref} /> */}
+            {/* <FormModalDelete ref={ref => React.refModalDeleteBrand = ref} /> */}
         </TableContainer>
     );
 }
